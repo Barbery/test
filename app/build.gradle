@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "28.0.2"
+
+    defaultConfig {
+        applicationId "com.tools.payhelper"
+        minSdkVersion 17
+        targetSdkVersion 19
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    implementation  files('libs/jsoup-1.7.2.jar')
+    implementation  files('libs/org.apache.http.legacy.jar')
+    implementation  files('libs/xUtils-2.6.14.jar')
+    implementation  files('libs/XposedBridgeAPI-89.jar')
+
+}
